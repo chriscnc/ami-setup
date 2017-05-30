@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/bin/bash#
+
+# setup prompt
+echo "PS1='\n[\u@\h:\w \D{%a %H:%M:%S} \j $?]\n$'" >> .bashrc
 
 # setup git
 git config --global user.name "Chris Cornelison"
