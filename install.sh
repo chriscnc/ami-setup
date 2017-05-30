@@ -1,4 +1,4 @@
-#!/bin/bash#
+#!/bin/bash
 
 # setup prompt
 echo "PS1='\n[\u@\h:\w \D{%a %H:%M:%S} \j $?]\n$'" >> .bashrc
@@ -31,6 +31,13 @@ sudo ln -fs spark-2.1.1-bin-hadoop2.7 /opt/spark
 echo '# Spark' >> .bashrc
 echo 'export SPARK_HOME=/opt/spark' >> .bashrc
 echo 'export PATH=$PATH:$SPARK_HOME/bin' >> .bashrc
+
+# Avrotools
+sudo wget -P /opt http://www.us.apache.org/dist/avro/avro-1.7.7/java/avro-tools-1.7.7.jar
+echo '#!/bin/bash' >> avrotools
+echo 'java -jar /opt/avro-tools-1.7.7.jar $@' >> avrotools
+sudo mv avrotools /usr/local/bin/
+sudo chmod +x /usr/local/bin/avrotools
 
 # install Pyenv
 sudo apt -y install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils
