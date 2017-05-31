@@ -48,6 +48,9 @@ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> .bashrc
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 git clone https://github.com/pyenv/pyenv-virtualenv.git .pyenv/plugins/pyenv-virtualenv
 echo 'eval "$(pyenv virtualenv-init -)"' >> .bashrc 
+
+source .bashrc
+
 pyenv install 3.6.1
 pyenv global 3.6.1
 
